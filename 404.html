@@ -6,19 +6,42 @@
     <style>
       body {
         margin: 0;
+        font-family: 'Poppins', sans-serif;
       }
-      h1 {
-        position: fixed;
+      @keyframes color-change {
+        0%   {color: black;}
+        100% {color: #d4af37;}
+      }
+      div {
+        width: 250px;
+        height: 50px;
         top: 50%;
         left: 50%;
-        margin-top: -18.335px;
-        margin-left: -101.355px;
+        position: fixed;
+        margin-left: -125px;
+        margin-top: -25px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        animation-name: color-change;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      h1 {
+        margin: 0;
       }
     </style>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>404 Not Found</h1>
-
+    <div>
+      <h1>404 Not Found</h1>
+    </div>
     <script src="js/three.js" type="text/javascript"></script>
     <script src="js/TrackballControls.js" type="text/javascript"></script>
     <script>
