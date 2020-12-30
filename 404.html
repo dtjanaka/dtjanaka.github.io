@@ -11,7 +11,7 @@
   </head>
   <body>
     <script src="js/three.js" type="text/javascript"></script>
-    <script src="js/OrbitControls.js" type="text/javascript"></script>
+    <script src="js/TrackballControls.js" type="text/javascript"></script>
     <script>
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0xf8f8ff);
@@ -33,7 +33,7 @@
         camera.updateProjectionMatrix();
       });
 
-      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+      const controls = new THREE.TrackballControls(camera, renderer.domElement);
 
       const colors = [
         0xff402e,
@@ -73,16 +73,14 @@
       wireframe.rotation.x += Math.PI * 0.5;
       scene.add(wireframe);
 
-      camera.position.x = 8;
-      camera.position.y = 8;
-      camera.position.z = 8;
+      camera.position.x = 6;
+      camera.position.y = 6;
+      camera.position.z = 6;
 
       camera.up.set(0, 0, 1);
       camera.lookAt(0, 0, 0);
-
       controls.update();
 
-      let rotation = 0;
       function animate() {
         requestAnimationFrame(animate);
 
@@ -94,12 +92,7 @@
           cubes[i].rotation.z += rotations[i];
         }
 
-        rotation += 0.01;
-        camera.position.x = Math.sin(rotation) * 12;
-        camera.position.y = Math.cos(rotation) * 12;
-        camera.lookAt(0, 0, 0);
         controls.update();
-
         renderer.render(scene, camera);
       }
       animate();
