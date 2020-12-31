@@ -26,12 +26,9 @@ button:hover {
 
 h1 {
   height: 50px;
-  color: #f8f8ff;
-}
-
-marquee {
-  display: block;
   background-color: black;
+  color: #f8f8ff;
+  text-align: center;
 }
 
 a {
